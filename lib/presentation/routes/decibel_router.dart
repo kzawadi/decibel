@@ -1,9 +1,8 @@
 // GoRouter configuration
+import 'package:decibel/presentation/intro/intro_page.dart';
+import 'package:decibel/presentation/login/login-page.dart';
 import 'package:decibel/presentation/routes/routes_observer.dart';
-import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:go_router/go_router.dart';
-
-final FirebaseAnalytics analytics = FirebaseAnalytics.instance;
 
 final router = GoRouter(
   observers: [
@@ -13,7 +12,11 @@ final router = GoRouter(
   routes: [
     GoRoute(
       path: '/',
-      // builder: (context, state) => const IntroPage(),
+      builder: (context, state) => const IntroScreens(),
+    ),
+    GoRoute(
+      path: '/login',
+      builder: (context, state) => const LoginScreen(),
     ),
   ],
 );

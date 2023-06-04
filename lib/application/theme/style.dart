@@ -7,7 +7,7 @@ import 'package:google_fonts/google_fonts.dart';
 class Style {
   /// Light style
   static final ThemeData light = FlexThemeData.light(
-    scheme: FlexScheme.gold,
+    scheme: FlexScheme.tealM3,
     surfaceMode: FlexSurfaceMode.levelSurfacesLowScaffold,
     blendLevel: 20,
     visualDensity: FlexColorScheme.comfortablePlatformDensity,
@@ -27,7 +27,7 @@ class Style {
 
   /// Dark style
   static final ThemeData dark = FlexThemeData.dark(
-    scheme: FlexScheme.blueWhale,
+    scheme: FlexScheme.tealM3,
     surfaceMode: FlexSurfaceMode.levelSurfacesLowScaffold,
     blendLevel: 20,
     visualDensity: FlexColorScheme.comfortablePlatformDensity,

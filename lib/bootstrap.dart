@@ -35,6 +35,7 @@
 import 'dart:async';
 import 'dart:developer';
 
+import 'package:decibel/firebase_options.dart';
 import 'package:decibel/injection.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/foundation.dart';
@@ -78,7 +79,9 @@ Future<void> bootstrap(FutureOr<Widget> Function() builder) async {
       Bloc.observer = const AppBlocObserver();
 
       configureDependencies();
-      await Firebase.initializeApp();
+      await Firebase.initializeApp(
+        options: DefaultFirebaseOptions.currentPlatform,
+      );
 
       HydratedBloc.storage = await HydratedStorage.build(
         storageDirectory: kIsWeb
