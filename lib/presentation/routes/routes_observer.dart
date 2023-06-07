@@ -23,7 +23,8 @@ class GoRouterObserver extends NavigatorObserver {
   }
 }
 
-class AlignFirebaseAnalyticsObserver extends RouteObserver<PageRoute<dynamic>> {
+class DecibelFirebaseAnalyticsObserver
+    extends RouteObserver<PageRoute<dynamic>> {
   final AnalyticsService analyticsService = AnalyticsService();
 
   @override

@@ -17,6 +17,8 @@ class AppSizes {
   static const wGap10 = SizedBox(width: 10);
   static const wGap15 = SizedBox(width: 15);
   static const wGap20 = SizedBox(width: 20);
+  static const wGap50 = SizedBox(width: 50);
+  static const wGap150 = SizedBox(width: 150);
 
   /// Used For Cover
   static const double DEFAULT_ASPECT_RATIO = 2 / 2;

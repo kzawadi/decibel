@@ -1,3 +1,5 @@
+import 'package:decibel/application/auth/auth_bloc.dart';
+import 'package:decibel/application/auth/sign_in_form/sign_in_form_bloc.dart';
 import 'package:decibel/application/theme/theme_cubit.dart';
 import 'package:decibel/injection.dart';
 import 'package:decibel/l10n/l10n.dart';
@@ -15,6 +17,13 @@ class DecibelApp extends StatelessWidget {
       providers: [
         BlocProvider<ThemeCubit>(
           create: (context) => getIt<ThemeCubit>(),
+        ),
+        BlocProvider<AuthBloc>(
+          create: (context) =>
+              getIt<AuthBloc>()..add(const AuthEvent.authCheckRequested()),
+        ),
+        BlocProvider<SignInFormBloc>(
+          create: (context) => getIt<SignInFormBloc>(),
         ),
       ],
       child: BlocBuilder<ThemeCubit, ThemeState>(

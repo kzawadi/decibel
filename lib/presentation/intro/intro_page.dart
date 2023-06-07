@@ -4,6 +4,7 @@ import 'package:decibel/presentation/core/app_strings.dart';
 import 'package:decibel/presentation/core/assets_constants.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:ionicons/ionicons.dart';
 
 class IntroScreens extends StatefulWidget {
   const IntroScreens({super.key});
@@ -143,7 +144,7 @@ class _IntroScreensState extends State<IntroScreens> {
                         shape: BoxShape.circle,
                       ),
                       child: const Icon(
-                        Icons.arrow_forward_ios_rounded,
+                        Ionicons.arrow_forward_outline,
                         color: Colors.white,
                         size: 15,
                       ),

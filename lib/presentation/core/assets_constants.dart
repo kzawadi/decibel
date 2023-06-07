@@ -2,8 +2,8 @@ class AssetsConstants {
   static const String _mainPath = 'assets';
   static const String _illustrationsPath = 'assets/illustrations';
 
-  static const String logo = '$_mainPath/logo_01.svg';
-  static const String logo02 = '$_mainPath/logo_02.svg';
+  static const String logo = '$_mainPath/logo/logo_01.svg';
+  static const String logo02 = '$_mainPath/logo/logo_02.svg';
   static const String intro_0 = '$_illustrationsPath/intro_0.png';
   static const String intro_1 = '$_illustrationsPath/intro_1.png';
   static const String intro_2 = '$_illustrationsPath/intro_2.png';
