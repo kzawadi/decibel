@@ -1,6 +1,8 @@
 // GoRouter configuration
+import 'package:decibel/presentation/home/home_page.dart';
 import 'package:decibel/presentation/intro/intro_page.dart';
 import 'package:decibel/presentation/login/forgot_password_page.dart';
+import 'package:decibel/presentation/login/sign_in_page.dart';
 import 'package:decibel/presentation/login/sign_in_view.dart';
 import 'package:decibel/presentation/login/sign_up_page.dart';
 import 'package:decibel/presentation/routes/routes_observer.dart';
@@ -25,8 +27,16 @@ final router = GoRouter(
       builder: (context, state) => const SignInForm(),
     ),
     GoRoute(
+      path: '/signUp',
+      builder: (context, state) => const SigningUpPage(),
+    ),
+    GoRoute(
       path: '/forgotPassword',
       builder: (context, state) => const ForgotPasswordPage(),
-    )
+    ),
+    GoRoute(
+      path: '/home',
+      builder: (context, state) => const HomePage(),
+    ),
   ],
 );

@@ -74,7 +74,7 @@ class SignInFormsState extends State<SignInForm> {
               context
                   .read<AuthBloc>()
                   .add(const AuthEvent.authCheckRequested());
-              context.replace('/');
+              context.replace('/home');
             },
           ),
         );
@@ -103,7 +103,7 @@ class SignInFormsState extends State<SignInForm> {
                                     AppStrings.welcomeText01,
                                     style: Theme.of(context)
                                         .textTheme
-                                        .titleMedium!
+                                        .titleLarge!
                                         .copyWith(
                                           fontWeight: FontWeight.bold,
                                           color: Theme.of(context).primaryColor,
@@ -114,7 +114,7 @@ class SignInFormsState extends State<SignInForm> {
                                     AppStrings.welcomeText02,
                                     style: Theme.of(context)
                                         .textTheme
-                                        .titleMedium!
+                                        .titleLarge!
                                         .copyWith(
                                           fontWeight: FontWeight.bold,
                                           color: Theme.of(context).primaryColor,
@@ -195,8 +195,7 @@ class SignInFormsState extends State<SignInForm> {
                                           ),
                                           AppButton(
                                             label: AppStrings.signUp,
-                                            onTap: () =>
-                                                context.go('/SignUpPage'),
+                                            onTap: () => context.go('/SignUp'),
                                             color: Theme.of(context)
                                                 .colorScheme
                                                 .primaryContainer,

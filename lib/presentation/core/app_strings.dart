@@ -42,5 +42,13 @@ class AppStrings {
 
   static const String resetLabel = 'Send reset link';
 
-  static const String loginLabel = 'Send reset link';
+  static const String loginLabel = 'Login';
+
+  static const String createAccountInstructions =
+      'Create an account in Decibel by filling the information below:';
+
+  static const String termsAndConditions =
+      'I Agree with Terms and Conditions of AGRI user Agreement and Privacy Policy.';
+
+  static const String alternateSignUptText = ' Alternatively you can use ';
 }

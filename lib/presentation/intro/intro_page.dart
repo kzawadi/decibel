@@ -137,6 +137,7 @@ class _IntroScreensState extends State<IntroScreens> {
                       }
                     },
                     child: Container(
+                      //todo(kzawadi): look at any way to make this cool and not spoky
                       margin: const EdgeInsets.all(20),
                       padding: const EdgeInsets.all(20),
                       decoration: BoxDecoration(

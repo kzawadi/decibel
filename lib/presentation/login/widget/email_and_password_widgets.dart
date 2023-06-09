@@ -4,6 +4,7 @@ import 'package:decibel/presentation/core/app_sizes.dart';
 import 'package:decibel/presentation/core/app_strings.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:ionicons/ionicons.dart';
 
 class SignInFormWidget extends StatelessWidget {
   const SignInFormWidget({
@@ -45,6 +46,7 @@ class SignInFormWidget extends StatelessWidget {
                         border: OutlineInputBorder(gapPadding: 8),
                         alignLabelWithHint: true,
                         contentPadding: EdgeInsets.all(16),
+                        prefixIcon: Icon(Ionicons.mail_outline),
                       ),
                       focusNode: _singInFocusNodes[0],
                       onChanged: (value) => context
@@ -78,6 +80,7 @@ class SignInFormWidget extends StatelessWidget {
                         border: const OutlineInputBorder(gapPadding: 8),
                         alignLabelWithHint: true,
                         contentPadding: const EdgeInsets.all(16),
+                        prefixIcon: const Icon(Ionicons.key_outline),
                         suffixIcon: GestureDetector(
                           onTap: () => context
                               .read<SignInFormBloc>()
