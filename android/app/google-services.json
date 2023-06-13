@@ -1,0 +1,98 @@
+{
+  "project_info": {
+    "project_number": "728802428808",
+    "project_id": "decibel-app",
+    "storage_bucket": "decibel-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:728802428808:android:a0359a275c40037d315c3d",
+        "android_client_info": {
+          "package_name": "com.decibel.org.decibel"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "728802428808-me6bkg4ebb7qe7ijieh8r2h61bf07gj6.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.decibel.org.decibel",
+            "certificate_hash": "7adc3ee83ec45468ddc967e8aae3d242c36e15ea"
+          }
+        },
+        {
+          "client_id": "728802428808-bq2u4hhjnrstop22ucg9ur80s0uc87ck.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDBNhFzue85Ib0MzukyH_LkCtykJ51_hDU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "728802428808-bq2u4hhjnrstop22ucg9ur80s0uc87ck.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "728802428808-jvdc7dg6nkajnartkqe6ijunvl47pjlv.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.decibel.org.decibel"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:728802428808:android:56bc29bfd9fc3667315c3d",
+        "android_client_info": {
+          "package_name": "com.decibel.org.decibel.dev"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "728802428808-12b6qu6nnd6m8d5q1ppp6sc7cmrbk6b5.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.decibel.org.decibel.dev",
+            "certificate_hash": "7adc3ee83ec45468ddc967e8aae3d242c36e15ea"
+          }
+        },
+        {
+          "client_id": "728802428808-bq2u4hhjnrstop22ucg9ur80s0uc87ck.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDBNhFzue85Ib0MzukyH_LkCtykJ51_hDU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "728802428808-bq2u4hhjnrstop22ucg9ur80s0uc87ck.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "728802428808-jvdc7dg6nkajnartkqe6ijunvl47pjlv.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.decibel.org.decibel"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
