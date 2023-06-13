@@ -57,7 +57,7 @@ mixin _$SignInFormEvent {
         signInWithEmailAndPasswordPressed,
     required TResult Function(SignInWithGooglePressed value)
         signInWithGooglePressed,
-    required TResult Function(_showPassword value) showPassword,
+    required TResult Function(_ShowPassword value) showPassword,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -69,7 +69,7 @@ mixin _$SignInFormEvent {
     TResult? Function(SignInWithEmailAndPasswordPressed value)?
         signInWithEmailAndPasswordPressed,
     TResult? Function(SignInWithGooglePressed value)? signInWithGooglePressed,
-    TResult? Function(_showPassword value)? showPassword,
+    TResult? Function(_ShowPassword value)? showPassword,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -81,7 +81,7 @@ mixin _$SignInFormEvent {
     TResult Function(SignInWithEmailAndPasswordPressed value)?
         signInWithEmailAndPasswordPressed,
     TResult Function(SignInWithGooglePressed value)? signInWithGooglePressed,
-    TResult Function(_showPassword value)? showPassword,
+    TResult Function(_ShowPassword value)? showPassword,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -229,7 +229,7 @@ class _$EmailChanged with DiagnosticableTreeMixin implements EmailChanged {
         signInWithEmailAndPasswordPressed,
     required TResult Function(SignInWithGooglePressed value)
         signInWithGooglePressed,
-    required TResult Function(_showPassword value) showPassword,
+    required TResult Function(_ShowPassword value) showPassword,
   }) {
     return emailChanged(this);
   }
@@ -244,7 +244,7 @@ class _$EmailChanged with DiagnosticableTreeMixin implements EmailChanged {
     TResult? Function(SignInWithEmailAndPasswordPressed value)?
         signInWithEmailAndPasswordPressed,
     TResult? Function(SignInWithGooglePressed value)? signInWithGooglePressed,
-    TResult? Function(_showPassword value)? showPassword,
+    TResult? Function(_ShowPassword value)? showPassword,
   }) {
     return emailChanged?.call(this);
   }
@@ -259,7 +259,7 @@ class _$EmailChanged with DiagnosticableTreeMixin implements EmailChanged {
     TResult Function(SignInWithEmailAndPasswordPressed value)?
         signInWithEmailAndPasswordPressed,
     TResult Function(SignInWithGooglePressed value)? signInWithGooglePressed,
-    TResult Function(_showPassword value)? showPassword,
+    TResult Function(_ShowPassword value)? showPassword,
     required TResult orElse(),
   }) {
     if (emailChanged != null) {
@@ -404,7 +404,7 @@ class _$PasswordChanged
         signInWithEmailAndPasswordPressed,
     required TResult Function(SignInWithGooglePressed value)
         signInWithGooglePressed,
-    required TResult Function(_showPassword value) showPassword,
+    required TResult Function(_ShowPassword value) showPassword,
   }) {
     return passwordChanged(this);
   }
@@ -419,7 +419,7 @@ class _$PasswordChanged
     TResult? Function(SignInWithEmailAndPasswordPressed value)?
         signInWithEmailAndPasswordPressed,
     TResult? Function(SignInWithGooglePressed value)? signInWithGooglePressed,
-    TResult? Function(_showPassword value)? showPassword,
+    TResult? Function(_ShowPassword value)? showPassword,
   }) {
     return passwordChanged?.call(this);
   }
@@ -434,7 +434,7 @@ class _$PasswordChanged
     TResult Function(SignInWithEmailAndPasswordPressed value)?
         signInWithEmailAndPasswordPressed,
     TResult Function(SignInWithGooglePressed value)? signInWithGooglePressed,
-    TResult Function(_showPassword value)? showPassword,
+    TResult Function(_ShowPassword value)? showPassword,
     required TResult orElse(),
   }) {
     if (passwordChanged != null) {
@@ -555,7 +555,7 @@ class _$RegisterWithEmailAndPasswordPressed
         signInWithEmailAndPasswordPressed,
     required TResult Function(SignInWithGooglePressed value)
         signInWithGooglePressed,
-    required TResult Function(_showPassword value) showPassword,
+    required TResult Function(_ShowPassword value) showPassword,
   }) {
     return registerWithEmailAndPasswordPressed(this);
   }
@@ -570,7 +570,7 @@ class _$RegisterWithEmailAndPasswordPressed
     TResult? Function(SignInWithEmailAndPasswordPressed value)?
         signInWithEmailAndPasswordPressed,
     TResult? Function(SignInWithGooglePressed value)? signInWithGooglePressed,
-    TResult? Function(_showPassword value)? showPassword,
+    TResult? Function(_ShowPassword value)? showPassword,
   }) {
     return registerWithEmailAndPasswordPressed?.call(this);
   }
@@ -585,7 +585,7 @@ class _$RegisterWithEmailAndPasswordPressed
     TResult Function(SignInWithEmailAndPasswordPressed value)?
         signInWithEmailAndPasswordPressed,
     TResult Function(SignInWithGooglePressed value)? signInWithGooglePressed,
-    TResult Function(_showPassword value)? showPassword,
+    TResult Function(_ShowPassword value)? showPassword,
     required TResult orElse(),
   }) {
     if (registerWithEmailAndPasswordPressed != null) {
@@ -702,7 +702,7 @@ class _$SignInWithEmailAndPasswordPressed
         signInWithEmailAndPasswordPressed,
     required TResult Function(SignInWithGooglePressed value)
         signInWithGooglePressed,
-    required TResult Function(_showPassword value) showPassword,
+    required TResult Function(_ShowPassword value) showPassword,
   }) {
     return signInWithEmailAndPasswordPressed(this);
   }
@@ -717,7 +717,7 @@ class _$SignInWithEmailAndPasswordPressed
     TResult? Function(SignInWithEmailAndPasswordPressed value)?
         signInWithEmailAndPasswordPressed,
     TResult? Function(SignInWithGooglePressed value)? signInWithGooglePressed,
-    TResult? Function(_showPassword value)? showPassword,
+    TResult? Function(_ShowPassword value)? showPassword,
   }) {
     return signInWithEmailAndPasswordPressed?.call(this);
   }
@@ -732,7 +732,7 @@ class _$SignInWithEmailAndPasswordPressed
     TResult Function(SignInWithEmailAndPasswordPressed value)?
         signInWithEmailAndPasswordPressed,
     TResult Function(SignInWithGooglePressed value)? signInWithGooglePressed,
-    TResult Function(_showPassword value)? showPassword,
+    TResult Function(_ShowPassword value)? showPassword,
     required TResult orElse(),
   }) {
     if (signInWithEmailAndPasswordPressed != null) {
@@ -846,7 +846,7 @@ class _$SignInWithGooglePressed
         signInWithEmailAndPasswordPressed,
     required TResult Function(SignInWithGooglePressed value)
         signInWithGooglePressed,
-    required TResult Function(_showPassword value) showPassword,
+    required TResult Function(_ShowPassword value) showPassword,
   }) {
     return signInWithGooglePressed(this);
   }
@@ -861,7 +861,7 @@ class _$SignInWithGooglePressed
     TResult? Function(SignInWithEmailAndPasswordPressed value)?
         signInWithEmailAndPasswordPressed,
     TResult? Function(SignInWithGooglePressed value)? signInWithGooglePressed,
-    TResult? Function(_showPassword value)? showPassword,
+    TResult? Function(_ShowPassword value)? showPassword,
   }) {
     return signInWithGooglePressed?.call(this);
   }
@@ -876,7 +876,7 @@ class _$SignInWithGooglePressed
     TResult Function(SignInWithEmailAndPasswordPressed value)?
         signInWithEmailAndPasswordPressed,
     TResult Function(SignInWithGooglePressed value)? signInWithGooglePressed,
-    TResult Function(_showPassword value)? showPassword,
+    TResult Function(_ShowPassword value)? showPassword,
     required TResult orElse(),
   }) {
     if (signInWithGooglePressed != null) {
@@ -891,25 +891,25 @@ abstract class SignInWithGooglePressed implements SignInFormEvent {
 }
 
 /// @nodoc
-abstract class _$$_showPasswordCopyWith<$Res> {
-  factory _$$_showPasswordCopyWith(
-          _$_showPassword value, $Res Function(_$_showPassword) then) =
-      __$$_showPasswordCopyWithImpl<$Res>;
+abstract class _$$_ShowPasswordCopyWith<$Res> {
+  factory _$$_ShowPasswordCopyWith(
+          _$_ShowPassword value, $Res Function(_$_ShowPassword) then) =
+      __$$_ShowPasswordCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_showPasswordCopyWithImpl<$Res>
-    extends _$SignInFormEventCopyWithImpl<$Res, _$_showPassword>
-    implements _$$_showPasswordCopyWith<$Res> {
-  __$$_showPasswordCopyWithImpl(
-      _$_showPassword _value, $Res Function(_$_showPassword) _then)
+class __$$_ShowPasswordCopyWithImpl<$Res>
+    extends _$SignInFormEventCopyWithImpl<$Res, _$_ShowPassword>
+    implements _$$_ShowPasswordCopyWith<$Res> {
+  __$$_ShowPasswordCopyWithImpl(
+      _$_ShowPassword _value, $Res Function(_$_ShowPassword) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_showPassword with DiagnosticableTreeMixin implements _showPassword {
-  const _$_showPassword();
+class _$_ShowPassword with DiagnosticableTreeMixin implements _ShowPassword {
+  const _$_ShowPassword();
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -925,7 +925,7 @@ class _$_showPassword with DiagnosticableTreeMixin implements _showPassword {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_showPassword);
+        (other.runtimeType == runtimeType && other is _$_ShowPassword);
   }
 
   @override
@@ -985,7 +985,7 @@ class _$_showPassword with DiagnosticableTreeMixin implements _showPassword {
         signInWithEmailAndPasswordPressed,
     required TResult Function(SignInWithGooglePressed value)
         signInWithGooglePressed,
-    required TResult Function(_showPassword value) showPassword,
+    required TResult Function(_ShowPassword value) showPassword,
   }) {
     return showPassword(this);
   }
@@ -1000,7 +1000,7 @@ class _$_showPassword with DiagnosticableTreeMixin implements _showPassword {
     TResult? Function(SignInWithEmailAndPasswordPressed value)?
         signInWithEmailAndPasswordPressed,
     TResult? Function(SignInWithGooglePressed value)? signInWithGooglePressed,
-    TResult? Function(_showPassword value)? showPassword,
+    TResult? Function(_ShowPassword value)? showPassword,
   }) {
     return showPassword?.call(this);
   }
@@ -1015,7 +1015,7 @@ class _$_showPassword with DiagnosticableTreeMixin implements _showPassword {
     TResult Function(SignInWithEmailAndPasswordPressed value)?
         signInWithEmailAndPasswordPressed,
     TResult Function(SignInWithGooglePressed value)? signInWithGooglePressed,
-    TResult Function(_showPassword value)? showPassword,
+    TResult Function(_ShowPassword value)? showPassword,
     required TResult orElse(),
   }) {
     if (showPassword != null) {
@@ -1025,8 +1025,8 @@ class _$_showPassword with DiagnosticableTreeMixin implements _showPassword {
   }
 }
 
-abstract class _showPassword implements SignInFormEvent {
-  const factory _showPassword() = _$_showPassword;
+abstract class _ShowPassword implements SignInFormEvent {
+  const factory _ShowPassword() = _$_ShowPassword;
 }
 
 /// @nodoc

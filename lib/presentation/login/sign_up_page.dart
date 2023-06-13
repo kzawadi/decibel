@@ -1,3 +1,4 @@
+import 'package:awesome_snackbar_content/awesome_snackbar_content.dart';
 import 'package:decibel/application/auth/auth_bloc.dart';
 import 'package:decibel/application/auth/sign_up_form/sign_up_form_bloc.dart';
 import 'package:decibel/presentation/core/app_button.dart';
@@ -47,29 +48,36 @@ class SigningUpPageState extends State<SigningUpPage> {
           (either) => either.fold(
             (failure) {
               final snackBar = SnackBar(
+                /// need to set following properties for best effect of awesome_snackbar_content
+                elevation: 0,
                 behavior: SnackBarBehavior.floating,
-                content: Text(
-                  failure.map(
-                    cancelledByUser: (_) => 'l10n.cancelledByUser',
-                    serverError: (_) => 'l10n.serverError',
-                    emailAlreadyInUse: (_) => 'l10n.emailAlreadyInUse',
+
+                backgroundColor: Theme.of(context).colorScheme.error,
+
+                content: AwesomeSnackbarContent(
+                  title: 'On Snap!',
+                  color: Theme.of(context).colorScheme.error,
+                  message: failure.map(
+                    cancelledByUser: (_) => AppStrings.loginCancelled,
+                    serverError: (_) => AppStrings.serverError,
+                    emailAlreadyInUse: (_) => AppStrings.emailAlreadyInUse,
                     invalidEmailAndPasswordCombination: (_) =>
-                        'l10n.invalidEmailAndPasswordCombination',
+                        AppStrings.invalidEmailAndPassword,
                   ),
-                ),
-                action: SnackBarAction(
-                  label: 'Ok',
-                  onPressed: () {},
+
+                  /// change contentType to ContentType.success, ContentType.warning or ContentType.help for variants
+                  contentType: ContentType.failure,
                 ),
               );
-
-              ScaffoldMessenger.of(context).showSnackBar(snackBar);
+              ScaffoldMessenger.of(context)
+                ..hideCurrentSnackBar()
+                ..showSnackBar(snackBar);
             },
             (_) {
               context
                   .read<AuthBloc>()
                   .add(const AuthEvent.authCheckRequested());
-              context.replace('/home');
+              context.replace('/');
             },
           ),
         );

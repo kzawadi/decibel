@@ -1,6 +1,6 @@
+import 'package:awesome_snackbar_content/awesome_snackbar_content.dart';
 import 'package:decibel/application/auth/auth_bloc.dart';
 import 'package:decibel/application/auth/sign_in_form/sign_in_form_bloc.dart';
-import 'package:decibel/injection.dart';
 import 'package:decibel/presentation/core/app_button.dart';
 import 'package:decibel/presentation/core/app_sizes.dart';
 import 'package:decibel/presentation/core/app_strings.dart';
@@ -42,27 +42,27 @@ class SignInFormsState extends State<SignInForm> {
   @override
   Widget build(BuildContext context) {
     return BlocConsumer<SignInFormBloc, SignInFormState>(
-      bloc: getIt<SignInFormBloc>(),
       listener: (context, state) {
         state.authFailureOrSuccessOption.fold(
           () {},
           (either) => either.fold(
             (failure) {
               final snackBar = SnackBar(
-                // backgroundColor: Colors.red,
+                /// need to set following properties for best effect of awesome_snackbar_content
+                elevation: 0,
                 behavior: SnackBarBehavior.floating,
-                content: Text(
-                  failure.map(
+
+                backgroundColor: Colors.transparent,
+                content: AwesomeSnackbarContent(
+                  title: 'On Snap!',
+                  message: failure.map(
                     cancelledByUser: (_) => AppStrings.loginCancelled,
                     serverError: (_) => AppStrings.serverError,
                     emailAlreadyInUse: (_) => AppStrings.emailAlreadyInUse,
                     invalidEmailAndPasswordCombination: (_) =>
                         AppStrings.invalidEmailAndPassword,
                   ),
-                ),
-                action: SnackBarAction(
-                  label: AppStrings.ok,
-                  onPressed: () {},
+                  contentType: ContentType.failure,
                 ),
               );
 
@@ -74,7 +74,7 @@ class SignInFormsState extends State<SignInForm> {
               context
                   .read<AuthBloc>()
                   .add(const AuthEvent.authCheckRequested());
-              context.replace('/home');
+              context.replace('/');
             },
           ),
         );

@@ -26,12 +26,13 @@ _$_User _$$_UserFromJson(Map<String, dynamic> json) => _$_User(
       followers: json['followers'] as int?,
       following: json['following'] as int?,
       fcmToken: json['fcmToken'] as String?,
-      userPreference:
-          $enumDecodeNullable(_$UserPreferenceEnumMap, json['userPreference']),
       followersList: (json['followersList'] as List<dynamic>?)
           ?.map((e) => e as String)
           .toList(),
       followingList: (json['followingList'] as List<dynamic>?)
+          ?.map((e) => e as String)
+          .toList(),
+      userInterests: (json['userInterests'] as List<dynamic>?)
           ?.map((e) => e as String)
           .toList(),
     );
@@ -56,14 +57,7 @@ Map<String, dynamic> _$$_UserToJson(_$_User instance) => <String, dynamic>{
       'followers': instance.followers,
       'following': instance.following,
       'fcmToken': instance.fcmToken,
-      'userPreference': _$UserPreferenceEnumMap[instance.userPreference],
       'followersList': instance.followersList,
       'followingList': instance.followingList,
+      'userInterests': instance.userInterests,
     };
-
-const _$UserPreferenceEnumMap = {
-  UserPreference.love: 'love',
-  UserPreference.friendship: 'friendship',
-  UserPreference.gameSquad: 'gameSquad',
-  UserPreference.likeMinded: 'likeMinded',
-};

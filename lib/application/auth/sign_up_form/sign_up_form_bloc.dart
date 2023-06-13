@@ -5,7 +5,6 @@ import 'package:decibel/domain/auth/auth_failure.dart';
 import 'package:decibel/domain/auth/use_cases/auth_use_cases.dart';
 import 'package:decibel/domain/auth/value_objects.dart';
 import 'package:decibel/domain/core/i_auth_use_cases.dart';
-// import 'package:dartz/dartz.dart';
 import 'package:flutter/foundation.dart';
 import 'package:fpdart/fpdart.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
@@ -15,9 +14,19 @@ part 'sign_up_form_bloc.freezed.dart';
 part 'sign_up_form_event.dart';
 part 'sign_up_form_state.dart';
 
-///This bloc handles all the signing procedures and initiate calls to domain
-///and handles all errors functionaly
-///it handles form validations and errors
+/// A BLoC (Business Logic Component) responsible for managing the sign-up form state.
+///
+/// This BLoC handles user interactions with the sign-up form and performs corresponding actions.
+/// It maintains the current state of the form and emits new states in response to events.
+///
+/// Example usage:
+/// ```dart
+/// final signUpFormBloc = SignUpFormBloc();
+///
+/// signUpFormBloc.add(SignUpFormEvent.emailChanged('example@example.com'));
+/// signUpFormBloc.add(SignUpFormEvent.passwordChanged('password123'));
+/// signUpFormBloc.add(SignUpFormEvent.registerWithEmailAndPasswordPressed());
+/// ```
 @injectable
 class SignUpFormBloc extends Bloc<SignUpFormEvent, SignUpFormState> {
   SignUpFormBloc(
@@ -31,10 +40,9 @@ class SignUpFormBloc extends Bloc<SignUpFormEvent, SignUpFormState> {
   final SignInWithGoogleUseCase _signInWithGoogleUseCase;
   final RegisterWithEmailAndPasswordUseCase
       _registerWithEmailAndPasswordUseCase;
-
   final SignInWithEmailAndPasswordUseCase _signInWithEmailAndPasswordUseCase;
 
-  ///The Bloc logic heper/handler function
+  /// Handles the sign-up form events and updates the form state accordingly.
   Future<void> _signInFormHandler(
     SignUpFormEvent event,
     Emitter<SignUpFormState> emit,
@@ -88,8 +96,10 @@ class SignUpFormBloc extends Bloc<SignUpFormEvent, SignUpFormState> {
     );
   }
 
-  ///This function take [EmailAddress] and [Password] and make a network call
-  ///to either register or login an account
+  /// Performs an action on the authentication facade using the provided email and password.
+  ///
+  /// This method is used for registering and signing in with email and password.
+  /// It handles the necessary validations and updates the form state accordingly.
   Future<void> _performActionOnAuthFacadeWithEmailAndPassword(
     Future<Either<AuthFailure, Unit>> Function({
       required EmailAddress emailAddress,
@@ -118,7 +128,7 @@ class SignUpFormBloc extends Bloc<SignUpFormEvent, SignUpFormState> {
       state.copyWith(
         isSubmitting: false,
         showErrorMessages: true,
-        authFailureOrSuccessOption: optionOf(failureOrSuccess),
+        authFailureOrSuccessOption: some(failureOrSuccess!),
       ),
     );
   }

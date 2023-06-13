@@ -1,4 +1,6 @@
 class AppStrings {
+  static const String appName = 'Decibel';
+  static const String userNameLabel = 'Name:';
   static const String intoText_00 =
       'A podcast is an episodic series of spoken word digital audio files that a user can download to a personal device for easy listening.';
   static const String intoText_01 =
@@ -51,4 +53,19 @@ class AppStrings {
       'I Agree with Terms and Conditions of AGRI user Agreement and Privacy Policy.';
 
   static const String alternateSignUptText = ' Alternatively you can use ';
+
+  static const String nextLabel = 'NEXT';
+
+  static const String onboardingPage01HelperText =
+      'Having a name makes it easier for people to refer and remember you.';
+
+  static const String initialName = 'Allen Missana';
+
+  static const String onboardingPage01HelperTitle = 'So, Whats your name ...?';
+
+  static const String onboardingPage02HelperText =
+      'Having preferences makes it easier to suggest good contents';
+
+  static const String onboardingPage02HelperTitle =
+      'And, Your preferences ...?';
 }

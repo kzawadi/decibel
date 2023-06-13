@@ -1,3 +1,4 @@
+import 'package:awesome_snackbar_content/awesome_snackbar_content.dart';
 import 'package:decibel/application/auth/auth_bloc.dart';
 import 'package:decibel/application/auth/sign_in_form/sign_in_form_bloc.dart';
 import 'package:decibel/presentation/core/app_button.dart';
@@ -23,23 +24,21 @@ class LoginScreen extends StatelessWidget {
           (either) => either.fold(
             (failure) {
               final snackBar = SnackBar(
-                // backgroundColor: Colors.red,
+                elevation: 0,
                 behavior: SnackBarBehavior.floating,
-                content: Text(
-                  failure.map(
+                backgroundColor: Theme.of(context).colorScheme.secondary,
+                content: AwesomeSnackbarContent(
+                  title: 'On Snap!',
+                  message: failure.map(
                     cancelledByUser: (_) => AppStrings.loginCancelled,
                     serverError: (_) => AppStrings.serverError,
                     emailAlreadyInUse: (_) => AppStrings.emailAlreadyInUse,
                     invalidEmailAndPasswordCombination: (_) =>
                         AppStrings.invalidEmailAndPassword,
                   ),
-                ),
-                action: SnackBarAction(
-                  label: AppStrings.ok,
-                  onPressed: () {},
+                  contentType: ContentType.failure,
                 ),
               );
-
               ScaffoldMessenger.of(context)
                 ..hideCurrentSnackBar()
                 ..showSnackBar(snackBar);
@@ -48,7 +47,7 @@ class LoginScreen extends StatelessWidget {
               context
                   .read<AuthBloc>()
                   .add(const AuthEvent.authCheckRequested());
-              context.replace('/home');
+              context.replace('/');
             },
           ),
         );

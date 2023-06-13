@@ -11,6 +11,7 @@ class AppButton extends StatelessWidget {
     this.width,
     this.margin,
     this.padding,
+    this.labelTextColor,
   });
 
   final String label;
@@ -20,6 +21,7 @@ class AppButton extends StatelessWidget {
   final EdgeInsetsGeometry? margin;
   final EdgeInsetsGeometry? padding;
   final Color color;
+  final Color? labelTextColor;
 
   @override
   Widget build(BuildContext context) {
@@ -42,7 +44,10 @@ class AppButton extends StatelessWidget {
               )
             : Text(
                 label,
-                style: Theme.of(context).textTheme.labelLarge,
+                style: Theme.of(context)
+                    .textTheme
+                    .labelLarge!
+                    .copyWith(color: labelTextColor ?? Colors.black),
               ),
       ),
     );
