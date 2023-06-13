@@ -52,7 +52,7 @@ class SigningUpPageState extends State<SigningUpPage> {
                 elevation: 0,
                 behavior: SnackBarBehavior.floating,
 
-                backgroundColor: Theme.of(context).colorScheme.error,
+                backgroundColor: Colors.transparent,
 
                 content: AwesomeSnackbarContent(
                   title: 'On Snap!',

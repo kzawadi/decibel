@@ -26,7 +26,7 @@ class LoginScreen extends StatelessWidget {
               final snackBar = SnackBar(
                 elevation: 0,
                 behavior: SnackBarBehavior.floating,
-                backgroundColor: Theme.of(context).colorScheme.secondary,
+                backgroundColor: Colors.transparent,
                 content: AwesomeSnackbarContent(
                   title: 'On Snap!',
                   message: failure.map(
