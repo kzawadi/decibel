@@ -5,6 +5,7 @@ import 'package:decibel/presentation/core/assets_constants.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:ionicons/ionicons.dart';
+import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class IntroScreens extends StatefulWidget {
   const IntroScreens({super.key});
@@ -101,23 +102,22 @@ class _IntroScreensState extends State<IntroScreens> {
 
               /* <---- Intro Dots ----> */
 
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: List.generate(
-                  _allIntros.length,
-                  (index) => _IntroDots(
-                    active: _currentPage == index,
-                  ),
-                ),
+              SmoothPageIndicator(
+                controller: _pageController, // PageController
+                count: 3,
+                effect: ExpandingDotsEffect(
+                  activeDotColor: Theme.of(context).primaryColor,
+                  dotHeight: 10,
+                  dotWidth: 10,
+                  radius: 8,
+                ), // your preferred effect
+                onDotClicked: (index) {},
               ),
-              // ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   TextButton(
                     onPressed: () {
-                      //todo navigate
-                      // Get.to(LoginScreen);
                       context.go('/login');
                     },
                     child: const Text('SKIP'),
