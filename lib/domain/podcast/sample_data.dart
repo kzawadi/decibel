@@ -1,0 +1,173 @@
+import 'package:decibel/domain/podcast/podcast_model.dart';
+
+final List<Map<String, dynamic>> samplePodcastData = [
+  {
+    'id': '1',
+    'title': 'Podcast 1',
+    'description': 'Description of Podcast 1',
+    'imageUrl': 'https://example.com/image1.jpg',
+    'hosts': ['Host 1', 'Host 2'],
+    'author': {
+      'id': 'author1',
+      'name': 'Author 1',
+      'bio': 'Bio of Author 1',
+      'imageUrl': 'https://example.com/author1.jpg',
+    },
+    'episodes': [
+      {
+        'id': 'episode1',
+        'title': 'Episode 1',
+        'description': 'Description of Episode 1',
+        'audioUrl': 'https://example.com/episode1.mp3',
+        'releaseDate': '2023-06-01T09:00:00Z',
+        'duration': 3600000,
+        'isPaused': false,
+      },
+      {
+        'id': 'episode2',
+        'title': 'Episode 2',
+        'description': 'Description of Episode 2',
+        'audioUrl': 'https://example.com/episode2.mp3',
+        'releaseDate': '2023-06-08T09:00:00Z',
+        'duration': 2700000,
+        'isPaused': true,
+      },
+    ],
+  },
+  {
+    'id': '2',
+    'title': 'Podcast 2',
+    'description': 'Description of Podcast 2',
+    'imageUrl': 'https://example.com/image2.jpg',
+    'hosts': ['Host 3', 'Host 4'],
+    'author': {
+      'id': 'author2',
+      'name': 'Author 2',
+      'bio': 'Bio of Author 2',
+      'imageUrl': 'https://example.com/author2.jpg',
+    },
+    'episodes': [
+      {
+        'id': 'episode3',
+        'title': 'Episode 3',
+        'description': 'Description of Episode 3',
+        'audioUrl': 'https://example.com/episode3.mp3',
+        'releaseDate': '2023-06-15T09:00:00Z',
+        'duration': 1800000,
+        'isPaused': false,
+      },
+      {
+        'id': 'episode4',
+        'title': 'Episode 4',
+        'description': 'Description of Episode 4',
+        'audioUrl': 'https://example.com/episode4.mp3',
+        'releaseDate': '2023-06-22T09:00:00Z',
+        'duration': 2400000,
+        'isPaused': false,
+      },
+    ],
+  },
+  {
+    'id': '3',
+    'title': 'Podcast 3',
+    'description': 'Description of Podcast 3',
+    'imageUrl': 'https://example.com/image3.jpg',
+    'hosts': ['Host 5', 'Host 6'],
+    'author': {
+      'id': 'author3',
+      'name': 'Author 3',
+      'bio': 'Bio of Author 3',
+      'imageUrl': 'https://example.com/author3.jpg',
+    },
+    'episodes': [
+      {
+        'id': 'episode5',
+        'title': 'Episode 5',
+        'description': 'Description of Episode 5',
+        'audioUrl': 'https://example.com/episode5.mp3',
+        'releaseDate': '2023-06-30T09:00:00Z',
+        'duration': 3000000,
+        'isPaused': false,
+      },
+      {
+        'id': 'episode6',
+        'title': 'Episode 6',
+        'description': 'Description of Episode 6',
+        'audioUrl': 'https://example.com/episode6.mp3',
+        'releaseDate': '2023-07-07T09:00:00Z',
+        'duration': 2100000,
+        'isPaused': true,
+      },
+    ],
+  },
+  {
+    'id': '4',
+    'title': 'Podcast 4',
+    'description': 'Description of Podcast 4',
+    'imageUrl': 'https://example.com/image4.jpg',
+    'hosts': ['Host 7', 'Host 8'],
+    'author': {
+      'id': 'author4',
+      'name': 'Author 4',
+      'bio': 'Bio of Author 4',
+      'imageUrl': 'https://example.com/author4.jpg',
+    },
+    'episodes': [
+      {
+        'id': 'episode7',
+        'title': 'Episode 7',
+        'description': 'Description of Episode 7',
+        'audioUrl': 'https://example.com/episode7.mp3',
+        'releaseDate': '2023-07-15T09:00:00Z',
+        'duration': 2400000,
+        'isPaused': false,
+      },
+      {
+        'id': 'episode8',
+        'title': 'Episode 8',
+        'description': 'Description of Episode 8',
+        'audioUrl': 'https://example.com/episode8.mp3',
+        'releaseDate': '2023-07-22T09:00:00Z',
+        'duration': 2700000,
+        'isPaused': false,
+      },
+    ],
+  },
+  {
+    'id': '5',
+    'title': 'Podcast 5',
+    'description': 'Description of Podcast 5',
+    'imageUrl': 'https://example.com/image5.jpg',
+    'hosts': ['Host 9', 'Host 10'],
+    'author': {
+      'id': 'author5',
+      'name': 'Author 5',
+      'bio': 'Bio of Author 5',
+      'imageUrl': 'https://example.com/author5.jpg',
+    },
+    'episodes': [
+      {
+        'id': 'episode9',
+        'title': 'Episode 9',
+        'description': 'Description of Episode 9',
+        'audioUrl': 'https://example.com/episode9.mp3',
+        'releaseDate': '2023-07-30T09:00:00Z',
+        'duration': 3200000,
+        'isPaused': false,
+      },
+      {
+        'id': 'episode10',
+        'title': 'Episode 10',
+        'description': 'Description of Episode 10',
+        'audioUrl': 'https://example.com/episode10.mp3',
+        'releaseDate': '2023-08-07T09:00:00Z',
+        'duration': 1800000,
+        'isPaused': true,
+      },
+    ],
+  },
+];
+
+final List<PodcastModel> podcasts = samplePodcastData.map((data) {
+  return PodcastModel.fromJson(data);
+}).toList();

@@ -38,6 +38,7 @@ dependencies:
   intl: ^0.18.0
   ionicons: ^0.2.2
   json_annotation: ^4.8.0
+  rxdart: ^0.27.7
   smooth_page_indicator: ^1.1.0
   uuid: ^3.0.7
 
