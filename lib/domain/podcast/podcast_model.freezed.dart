@@ -24,6 +24,8 @@ mixin _$PodcastModel {
   String? get title => throw _privateConstructorUsedError;
   String? get description => throw _privateConstructorUsedError;
   String? get imageUrl => throw _privateConstructorUsedError;
+  String? get link => throw _privateConstructorUsedError;
+  String? get copyright => throw _privateConstructorUsedError;
   List<EpisodeModel>? get episodes => throw _privateConstructorUsedError;
   bool? get paid => throw _privateConstructorUsedError;
   AuthorModel? get author => throw _privateConstructorUsedError;
@@ -45,6 +47,8 @@ abstract class $PodcastModelCopyWith<$Res> {
       String? title,
       String? description,
       String? imageUrl,
+      String? link,
+      String? copyright,
       List<EpisodeModel>? episodes,
       bool? paid,
       AuthorModel? author});
@@ -69,6 +73,8 @@ class _$PodcastModelCopyWithImpl<$Res, $Val extends PodcastModel>
     Object? title = freezed,
     Object? description = freezed,
     Object? imageUrl = freezed,
+    Object? link = freezed,
+    Object? copyright = freezed,
     Object? episodes = freezed,
     Object? paid = freezed,
     Object? author = freezed,
@@ -89,6 +95,14 @@ class _$PodcastModelCopyWithImpl<$Res, $Val extends PodcastModel>
       imageUrl: freezed == imageUrl
           ? _value.imageUrl
           : imageUrl // ignore: cast_nullable_to_non_nullable
+              as String?,
+      link: freezed == link
+          ? _value.link
+          : link // ignore: cast_nullable_to_non_nullable
+              as String?,
+      copyright: freezed == copyright
+          ? _value.copyright
+          : copyright // ignore: cast_nullable_to_non_nullable
               as String?,
       episodes: freezed == episodes
           ? _value.episodes
@@ -131,6 +145,8 @@ abstract class _$$_PodcastModelCopyWith<$Res>
       String? title,
       String? description,
       String? imageUrl,
+      String? link,
+      String? copyright,
       List<EpisodeModel>? episodes,
       bool? paid,
       AuthorModel? author});
@@ -154,6 +170,8 @@ class __$$_PodcastModelCopyWithImpl<$Res>
     Object? title = freezed,
     Object? description = freezed,
     Object? imageUrl = freezed,
+    Object? link = freezed,
+    Object? copyright = freezed,
     Object? episodes = freezed,
     Object? paid = freezed,
     Object? author = freezed,
@@ -174,6 +192,14 @@ class __$$_PodcastModelCopyWithImpl<$Res>
       imageUrl: freezed == imageUrl
           ? _value.imageUrl
           : imageUrl // ignore: cast_nullable_to_non_nullable
+              as String?,
+      link: freezed == link
+          ? _value.link
+          : link // ignore: cast_nullable_to_non_nullable
+              as String?,
+      copyright: freezed == copyright
+          ? _value.copyright
+          : copyright // ignore: cast_nullable_to_non_nullable
               as String?,
       episodes: freezed == episodes
           ? _value._episodes
@@ -199,6 +225,8 @@ class _$_PodcastModel implements _PodcastModel {
       this.title,
       this.description,
       this.imageUrl,
+      this.link,
+      this.copyright,
       final List<EpisodeModel>? episodes,
       this.paid,
       this.author})
@@ -215,6 +243,10 @@ class _$_PodcastModel implements _PodcastModel {
   final String? description;
   @override
   final String? imageUrl;
+  @override
+  final String? link;
+  @override
+  final String? copyright;
   final List<EpisodeModel>? _episodes;
   @override
   List<EpisodeModel>? get episodes {
@@ -232,7 +264,7 @@ class _$_PodcastModel implements _PodcastModel {
 
   @override
   String toString() {
-    return 'PodcastModel(id: $id, title: $title, description: $description, imageUrl: $imageUrl, episodes: $episodes, paid: $paid, author: $author)';
+    return 'PodcastModel(id: $id, title: $title, description: $description, imageUrl: $imageUrl, link: $link, copyright: $copyright, episodes: $episodes, paid: $paid, author: $author)';
   }
 
   @override
@@ -246,6 +278,9 @@ class _$_PodcastModel implements _PodcastModel {
                 other.description == description) &&
             (identical(other.imageUrl, imageUrl) ||
                 other.imageUrl == imageUrl) &&
+            (identical(other.link, link) || other.link == link) &&
+            (identical(other.copyright, copyright) ||
+                other.copyright == copyright) &&
             const DeepCollectionEquality().equals(other._episodes, _episodes) &&
             (identical(other.paid, paid) || other.paid == paid) &&
             (identical(other.author, author) || other.author == author));
@@ -253,8 +288,17 @@ class _$_PodcastModel implements _PodcastModel {
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, id, title, description, imageUrl,
-      const DeepCollectionEquality().hash(_episodes), paid, author);
+  int get hashCode => Object.hash(
+      runtimeType,
+      id,
+      title,
+      description,
+      imageUrl,
+      link,
+      copyright,
+      const DeepCollectionEquality().hash(_episodes),
+      paid,
+      author);
 
   @JsonKey(ignore: true)
   @override
@@ -276,6 +320,8 @@ abstract class _PodcastModel implements PodcastModel {
       final String? title,
       final String? description,
       final String? imageUrl,
+      final String? link,
+      final String? copyright,
       final List<EpisodeModel>? episodes,
       final bool? paid,
       final AuthorModel? author}) = _$_PodcastModel;
@@ -291,6 +337,10 @@ abstract class _PodcastModel implements PodcastModel {
   String? get description;
   @override
   String? get imageUrl;
+  @override
+  String? get link;
+  @override
+  String? get copyright;
   @override
   List<EpisodeModel>? get episodes;
   @override
@@ -316,6 +366,7 @@ mixin _$EpisodeModel {
   DateTime? get releaseDate => throw _privateConstructorUsedError;
   Duration? get duration => throw _privateConstructorUsedError;
   bool? get isPaused => throw _privateConstructorUsedError;
+  String? get link => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -336,7 +387,8 @@ abstract class $EpisodeModelCopyWith<$Res> {
       String? audioUrl,
       DateTime? releaseDate,
       Duration? duration,
-      bool? isPaused});
+      bool? isPaused,
+      String? link});
 }
 
 /// @nodoc
@@ -359,6 +411,7 @@ class _$EpisodeModelCopyWithImpl<$Res, $Val extends EpisodeModel>
     Object? releaseDate = freezed,
     Object? duration = freezed,
     Object? isPaused = freezed,
+    Object? link = freezed,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -389,6 +442,10 @@ class _$EpisodeModelCopyWithImpl<$Res, $Val extends EpisodeModel>
           ? _value.isPaused
           : isPaused // ignore: cast_nullable_to_non_nullable
               as bool?,
+      link: freezed == link
+          ? _value.link
+          : link // ignore: cast_nullable_to_non_nullable
+              as String?,
     ) as $Val);
   }
 }
@@ -408,7 +465,8 @@ abstract class _$$_EpisodeModelCopyWith<$Res>
       String? audioUrl,
       DateTime? releaseDate,
       Duration? duration,
-      bool? isPaused});
+      bool? isPaused,
+      String? link});
 }
 
 /// @nodoc
@@ -429,6 +487,7 @@ class __$$_EpisodeModelCopyWithImpl<$Res>
     Object? releaseDate = freezed,
     Object? duration = freezed,
     Object? isPaused = freezed,
+    Object? link = freezed,
   }) {
     return _then(_$_EpisodeModel(
       id: null == id
@@ -459,6 +518,10 @@ class __$$_EpisodeModelCopyWithImpl<$Res>
           ? _value.isPaused
           : isPaused // ignore: cast_nullable_to_non_nullable
               as bool?,
+      link: freezed == link
+          ? _value.link
+          : link // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }
@@ -473,7 +536,8 @@ class _$_EpisodeModel implements _EpisodeModel {
       this.audioUrl,
       this.releaseDate,
       this.duration,
-      this.isPaused});
+      this.isPaused,
+      this.link});
 
   factory _$_EpisodeModel.fromJson(Map<String, dynamic> json) =>
       _$$_EpisodeModelFromJson(json);
@@ -492,10 +556,12 @@ class _$_EpisodeModel implements _EpisodeModel {
   final Duration? duration;
   @override
   final bool? isPaused;
+  @override
+  final String? link;
 
   @override
   String toString() {
-    return 'EpisodeModel(id: $id, title: $title, description: $description, audioUrl: $audioUrl, releaseDate: $releaseDate, duration: $duration, isPaused: $isPaused)';
+    return 'EpisodeModel(id: $id, title: $title, description: $description, audioUrl: $audioUrl, releaseDate: $releaseDate, duration: $duration, isPaused: $isPaused, link: $link)';
   }
 
   @override
@@ -514,13 +580,14 @@ class _$_EpisodeModel implements _EpisodeModel {
             (identical(other.duration, duration) ||
                 other.duration == duration) &&
             (identical(other.isPaused, isPaused) ||
-                other.isPaused == isPaused));
+                other.isPaused == isPaused) &&
+            (identical(other.link, link) || other.link == link));
   }
 
   @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(runtimeType, id, title, description, audioUrl,
-      releaseDate, duration, isPaused);
+      releaseDate, duration, isPaused, link);
 
   @JsonKey(ignore: true)
   @override
@@ -544,7 +611,8 @@ abstract class _EpisodeModel implements EpisodeModel {
       final String? audioUrl,
       final DateTime? releaseDate,
       final Duration? duration,
-      final bool? isPaused}) = _$_EpisodeModel;
+      final bool? isPaused,
+      final String? link}) = _$_EpisodeModel;
 
   factory _EpisodeModel.fromJson(Map<String, dynamic> json) =
       _$_EpisodeModel.fromJson;
@@ -563,6 +631,8 @@ abstract class _EpisodeModel implements EpisodeModel {
   Duration? get duration;
   @override
   bool? get isPaused;
+  @override
+  String? get link;
   @override
   @JsonKey(ignore: true)
   _$$_EpisodeModelCopyWith<_$_EpisodeModel> get copyWith =>

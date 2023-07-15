@@ -10,6 +10,8 @@ class PodcastModel with _$PodcastModel {
     String? title,
     String? description,
     String? imageUrl,
+    String? link,
+    String? copyright,
     List<EpisodeModel>? episodes,
     bool? paid,
     AuthorModel? author,
@@ -29,6 +31,7 @@ class EpisodeModel with _$EpisodeModel {
     DateTime? releaseDate,
     Duration? duration,
     bool? isPaused,
+    String? link,
   }) = _EpisodeModel;
 
   factory EpisodeModel.fromJson(Map<String, dynamic> json) =>

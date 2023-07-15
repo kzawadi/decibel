@@ -12,6 +12,8 @@ _$_PodcastModel _$$_PodcastModelFromJson(Map<String, dynamic> json) =>
       title: json['title'] as String?,
       description: json['description'] as String?,
       imageUrl: json['imageUrl'] as String?,
+      link: json['link'] as String?,
+      copyright: json['copyright'] as String?,
       episodes: (json['episodes'] as List<dynamic>?)
           ?.map((e) => EpisodeModel.fromJson(e as Map<String, dynamic>))
           .toList(),
@@ -27,6 +29,8 @@ Map<String, dynamic> _$$_PodcastModelToJson(_$_PodcastModel instance) =>
       'title': instance.title,
       'description': instance.description,
       'imageUrl': instance.imageUrl,
+      'link': instance.link,
+      'copyright': instance.copyright,
       'episodes': instance.episodes,
       'paid': instance.paid,
       'author': instance.author,
@@ -45,6 +49,7 @@ _$_EpisodeModel _$$_EpisodeModelFromJson(Map<String, dynamic> json) =>
           ? null
           : Duration(microseconds: json['duration'] as int),
       isPaused: json['isPaused'] as bool?,
+      link: json['link'] as String?,
     );
 
 Map<String, dynamic> _$$_EpisodeModelToJson(_$_EpisodeModel instance) =>
@@ -56,6 +61,7 @@ Map<String, dynamic> _$$_EpisodeModelToJson(_$_EpisodeModel instance) =>
       'releaseDate': instance.releaseDate?.toIso8601String(),
       'duration': instance.duration?.inMicroseconds,
       'isPaused': instance.isPaused,
+      'link': instance.link,
     };
 
 _$_AuthorModel _$$_AuthorModelFromJson(Map<String, dynamic> json) =>

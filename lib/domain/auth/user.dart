@@ -18,6 +18,8 @@ class User with _$User {
     String? bannerImage,
     String? contact,
     String? bio,
+    String? role,
+    String? group,
     String? location,
     String? dob,
     String? createdAt,
