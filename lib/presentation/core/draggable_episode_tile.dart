@@ -11,8 +11,8 @@ import 'package:provider/provider.dart';
 
 class DraggableEpisodeTile extends StatelessWidget {
   const DraggableEpisodeTile({
-    super.key,
     required this.episode,
+    super.key,
     this.index = 0,
     this.draggable = true,
     this.playable = false,
@@ -46,7 +46,7 @@ class DraggableEpisodeTile extends StatelessWidget {
       trailing: draggable
           ? ReorderableDragStartListener(
               index: index,
-              child: const Icon(Icons.drag_handle),
+              child: const Icon(Icons.error_outline),
             )
           : const SizedBox(
               width: 0,

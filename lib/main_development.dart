@@ -22,11 +22,6 @@ void main() async {
     );
     await SystemChrome.setEnabledSystemUIMode(SystemUiMode.edgeToEdge);
 
-    // HydratedBloc.storage = await HydratedStorage.build(
-    //   storageDirectory: kIsWeb
-    //       ? HydratedStorage.webStorageDirectory
-    //       : await getTemporaryDirectory(),
-    // );
     SystemChrome.setSystemUIOverlayStyle(
       const SystemUiOverlayStyle(statusBarColor: Colors.transparent),
     );

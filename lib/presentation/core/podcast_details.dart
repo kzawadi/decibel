@@ -57,13 +57,11 @@ class _PodcastDetailsState extends State<PodcastDetails> {
     // Load the details of the Podcast specified in the URL
     log.fine('initState() - load feed');
 
-    widget._podcastBloc.load(
-      Feed(
-        podcast: widget.podcast,
-        backgroundFresh: true,
-        silently: true,
-      ),
-    );
+    widget._podcastBloc.load(Feed(
+      podcast: widget.podcast,
+      backgroundFresh: true,
+      silently: true,
+    ));
 
     // We only want to display the podcast title when the toolbar is in a
     // collapsed state. Add a listener and set toollbarCollapsed variable
@@ -120,15 +118,16 @@ class _PodcastDetailsState extends State<PodcastDetails> {
 
   @override
   void didChangeDependencies() {
-    _systemOverlayStyle = SystemUiOverlayStyle(
-      statusBarIconBrightness: Theme.of(context).brightness == Brightness.light
-          ? Brightness.dark
-          : Brightness.light,
-      statusBarColor: Theme.of(context)
-          .appBarTheme
-          .backgroundColor!
-          .withOpacity(toolbarCollapsed ? 1.0 : 0.5),
-    );
+    // _systemOverlayStyle = SystemUiOverlayStyle(
+    //   statusBarIconBrightness: Theme.of(context).brightness == Brightness.light
+    //       ? Brightness.dark
+    //       : Brightness.light,
+    //   statusBarColor: Theme.of(context)
+    //       .appBarTheme
+    //       .backgroundColor!
+    //       .withOpacity(toolbarCollapsed ? 1.0 : 0.5),
+    // );
+
     super.didChangeDependencies();
   }
 
@@ -150,28 +149,28 @@ class _PodcastDetailsState extends State<PodcastDetails> {
 
   void _resetSystemOverlayStyle() {
     setState(() {
-      _systemOverlayStyle = SystemUiOverlayStyle(
-        statusBarIconBrightness:
-            Theme.of(context).brightness == Brightness.light
-                ? Brightness.dark
-                : Brightness.light,
-        statusBarColor: Colors.transparent,
-      );
+      // _systemOverlayStyle = SystemUiOverlayStyle(
+      //   statusBarIconBrightness:
+      //       Theme.of(context).brightness == Brightness.light
+      //           ? Brightness.dark
+      //           : Brightness.light,
+      //   statusBarColor: Colors.transparent,
+      // );
     });
   }
 
   void _updateSystemOverlayStyle() {
     setState(() {
-      _systemOverlayStyle = SystemUiOverlayStyle(
-        statusBarIconBrightness:
-            Theme.of(context).brightness == Brightness.light
-                ? Brightness.dark
-                : Brightness.light,
-        statusBarColor: Theme.of(context)
-            .appBarTheme
-            .backgroundColor!
-            .withOpacity(toolbarCollapsed ? 1.0 : 0.5),
-      );
+      // _systemOverlayStyle = SystemUiOverlayStyle(
+      //   statusBarIconBrightness:
+      //       Theme.of(context).brightness == Brightness.light
+      //           ? Brightness.dark
+      //           : Brightness.light,
+      //   statusBarColor: Theme.of(context)
+      //       .appBarTheme
+      //       .backgroundColor!
+      //       .withOpacity(toolbarCollapsed ? 1.0 : 0.5),
+      // );
     });
   }
 
@@ -197,11 +196,11 @@ class _PodcastDetailsState extends State<PodcastDetails> {
               controller: _sliverScrollController,
               slivers: <Widget>[
                 SliverAppBar(
-                  systemOverlayStyle: _systemOverlayStyle,
+                  // systemOverlayStyle: _systemOverlayStyle,
                   title: AnimatedOpacity(
                     opacity: toolbarCollapsed ? 1.0 : 0.0,
                     duration: const Duration(milliseconds: 500),
-                    child: Text(widget.podcast.title!),
+                    child: Text(widget.podcast.title),
                   ),
                   leading: PlatformBackButton(
                     iconColour: toolbarCollapsed &&

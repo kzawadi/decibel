@@ -66,7 +66,6 @@ class _PlayerPositionControlsState extends State<PlayerPositionControls> {
           padding: const EdgeInsets.only(
             left: 16,
             right: 16,
-            top: 0,
             bottom: 4,
           ),
           child: Row(
@@ -116,7 +115,6 @@ class _PlayerPositionControlsState extends State<PlayerPositionControls> {
                     : Slider(
                         onChanged: null,
                         value: 0,
-                        max: 1,
                         activeColor: Theme.of(context).primaryColor,
                       ),
               ),

@@ -506,23 +506,22 @@ class _PodcastCache {
   final Queue<_CacheItem?> _queue;
 
   podcast_search.Podcast? item(String key) {
-    final hit = _queue.firstWhere(
+    final hit = _queue.firstWhereOrNull(
       (_CacheItem? i) => i!.podcast.url == key,
-      orElse: () => null,
     );
-    // podcast_search.Podcast p;
+    podcast_search.Podcast? p;
 
     if (hit != null) {
       final now = DateTime.now();
 
       if (now.difference(hit.dateAdded) <= expiration) {
-        return hit.podcast;
+        return p = hit.podcast;
       } else {
         _queue.remove(hit);
       }
     }
 
-    return null;
+    return p;
   }
 
   void store(podcast_search.Podcast podcast) {

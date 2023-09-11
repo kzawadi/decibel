@@ -172,7 +172,7 @@ class PodcastBloc extends Bloc {
     /// Only populate episodes if the ID we started the load with is the
     /// same as the one we have ended up with.
     if (lastFeed.podcast.url == _podcast!.url) {
-      _episodes = _podcast!.episodes!;
+      _episodes = _podcast!.episodes;
       _episodesStream.add(_episodes);
 
       _podcastStream.sink.add(BlocPopulatedState<Podcast>(results: _podcast));
@@ -193,13 +193,13 @@ class PodcastBloc extends Bloc {
     /// Only populate episodes if the ID we started the load with is the
     /// same as the one we have ended up with.
     if (lastFeed.podcast.url == _podcast!.url) {
-      _episodes = _podcast!.episodes!;
+      _episodes = _podcast!.episodes;
 
       if (_podcast!.newEpisodes) {
         log.fine('We have new episodes to display');
         _backgroundLoadStream.sink.add(BlocPopulatedState<void>());
         _podcastStream.sink.add(BlocPopulatedState<Podcast>(results: _podcast));
-      } else if (_podcast!.updatedEpisodes!) {
+      } else if (_podcast!.updatedEpisodes) {
         log.fine('We have updated episodes to re-display');
         _episodesStream.add(_episodes);
       }
@@ -303,15 +303,15 @@ class PodcastBloc extends Bloc {
           _podcast = await podcastService.subscribe(_podcast!);
           _podcastStream.add(BlocPopulatedState<Podcast>(results: _podcast));
           await _loadSubscriptions();
-          _episodesStream.add(_podcast!.episodes!);
+          _episodesStream.add(_podcast!.episodes);
         case PodcastEvent.unsubscribe:
           await podcastService.unsubscribe(_podcast!);
           _podcast!.id = null;
           _podcastStream.add(BlocPopulatedState<Podcast>(results: _podcast));
           await _loadSubscriptions();
-          _episodesStream.add(_podcast!.episodes!);
+          _episodesStream.add(_podcast!.episodes);
         case PodcastEvent.markAllPlayed:
-          for (final e in _podcast!.episodes!) {
+          for (final e in _podcast!.episodes) {
             if (!e.played) {
               e.played = true;
               e.position = 0;
@@ -319,9 +319,9 @@ class PodcastBloc extends Bloc {
           }
 
           await podcastService.save(_podcast!);
-          _episodesStream.add(_podcast!.episodes!);
+          _episodesStream.add(_podcast!.episodes);
         case PodcastEvent.clearAllPlayed:
-          for (final e in _podcast!.episodes!) {
+          for (final e in _podcast!.episodes) {
             if (e.played) {
               e.played = false;
               e.position = 0;
@@ -329,7 +329,7 @@ class PodcastBloc extends Bloc {
           }
 
           await podcastService.save(_podcast!);
-          _episodesStream.add(_podcast!.episodes!);
+          _episodesStream.add(_podcast!.episodes);
         case PodcastEvent.reloadSubscriptions:
           await _loadSubscriptions();
         case PodcastEvent.refresh:

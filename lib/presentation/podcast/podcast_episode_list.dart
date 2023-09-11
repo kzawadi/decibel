@@ -11,13 +11,13 @@ import 'package:provider/provider.dart';
 
 class PodcastEpisodeList extends StatelessWidget {
   const PodcastEpisodeList({
-    Key? key,
+    super.key,
     required this.episodes,
     required this.play,
     required this.download,
     this.icon = _defaultIcon,
     this.emptyMessage = '',
-  }) : super(key: key);
+  });
   final List<Episode?>? episodes;
   final IconData icon;
   final String emptyMessage;
@@ -42,7 +42,7 @@ class PodcastEpisodeList extends StatelessWidget {
                 final episode = episodes![index]!;
 
                 if (snapshot.hasData) {
-                  final playingGuid = snapshot.data!.playing.guid;
+                  final playingGuid = snapshot.data!.playing?.guid;
 
                   queued = snapshot.data!.queue
                       .any((element) => element.guid == episode.guid);

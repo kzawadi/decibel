@@ -7,6 +7,7 @@ import 'dart:async';
 import 'package:decibel/application/bloc/audio_bloc.dart';
 import 'package:decibel/infrastructure/podcast/services/audio/audio_player_service.dart';
 import 'package:decibel/presentation/core/app_strings.dart';
+import 'package:decibel/presentation/core/sleep_selector.dart';
 import 'package:decibel/presentation/core/speed_selector.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
@@ -36,10 +37,7 @@ class _PlayerTransportControlsState extends State<PlayerTransportControls> {
           return Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[
-              const SizedBox(
-                width: 36,
-                height: 36,
-              ),
+              const SleepSelectorWidget(),
               IconButton(
                 onPressed: () {
                   return snapshot.data == AudioState.buffering

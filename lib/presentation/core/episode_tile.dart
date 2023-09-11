@@ -62,7 +62,9 @@ class EpisodeTile extends StatelessWidget {
           Opacity(
             opacity: episode.played ? 0.5 : 1.0,
             child: TileImage(
-              url: episode.thumbImageUrl ?? episode.imageUrl!,
+              url: episode.thumbImageUrl ??
+                  episode.imageUrl ??
+                  'https://cdn.pixabay.com/photo/2014/12/22/00/07/tree-576847_1280.png', //todo(kzawadi)
               size: 56,
               highlight: episode.highlight,
             ),

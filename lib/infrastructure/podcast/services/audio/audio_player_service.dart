@@ -4,6 +4,7 @@
 
 import 'package:decibel/application/bloc/queue_event_state.dart';
 import 'package:decibel/domain/podcast/episode.dart';
+import 'package:decibel/domain/podcast/sleep.dart';
 
 enum AudioState {
   none,
@@ -16,29 +17,31 @@ enum AudioState {
 }
 
 class PositionState {
-  PositionState(
-    this.position,
-    this.length,
-    this.percentage,
-    this.episode, [
+  PositionState({
+    required this.position,
+    required this.length,
+    required this.percentage,
+    this.episode,
     this.buffering = false,
-  ]);
+  });
 
-  PositionState.emptyState() {
-    PositionState(const Duration(), const Duration(), 0, episode);
-  }
-  late Duration position;
+  PositionState.emptyState()
+      : position = const Duration(seconds: 0),
+        length = const Duration(seconds: 0),
+        percentage = 0,
+        buffering = false;
+  Duration position;
   late Duration length;
   late int percentage;
-  late Episode episode;
-  late bool buffering;
+  Episode? episode;
+  final bool buffering;
 }
 
 /// This class defines the audio playback options supported by Anytime. The implementing
 /// classes will then handle the specifics for the platform we are running on.
 abstract class AudioPlayerService {
   /// Play a new episode, optionally resume at last save point.
-  Future<void> playEpisode({required Episode episode, bool resume});
+  Future<void> playEpisode({required Episode episode, bool resume = true});
 
   /// Resume playing of current episode
   Future<void> play();
@@ -86,8 +89,7 @@ abstract class AudioPlayerService {
   /// Call to toggle trim silence.
   Future<void> volumeBoost(bool boost);
 
-  // Future<void> searchTranscript(String search);
-  // Future<void> clearTranscript();
+  void sleep(Sleep sleep);
 
   Episode? nowPlaying;
 
@@ -98,4 +100,5 @@ abstract class AudioPlayerService {
   // Stream<TranscriptState> transcriptEvent;
   Stream<int>? playbackError;
   Stream<QueueListState>? queueState;
+  Stream<Sleep>? sleepStream;
 }

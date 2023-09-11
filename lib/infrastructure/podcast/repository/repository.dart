@@ -26,7 +26,7 @@ abstract class Repository {
   /// Episodes
   Future<List<Episode>> findAllEpisodes();
 
-  Future<Episode> findEpisodeById(int id);
+  Future<Episode?> findEpisodeById(int id);
 
   Future<Episode?> findEpisodeByGuid(String guid);
 

@@ -2,18 +2,32 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'package:flex_color_scheme/flex_color_scheme.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 final ThemeData _lightTheme = _buildLightTheme();
 final ThemeData _darkTheme = _buildDarkTheme();
 
 ThemeData _buildLightTheme() {
-  return FlexThemeData.light(scheme: FlexScheme.amber);
+  return ThemeData(
+    colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+    useMaterial3: true,
+    appBarTheme: const AppBarTheme(
+      systemOverlayStyle: SystemUiOverlayStyle.light,
+      foregroundColor: Colors.purple,
+    ),
+  ); //FlexThemeData.light(scheme: FlexScheme.amber);
 }
 
 ThemeData _buildDarkTheme() {
-  return FlexThemeData.dark(scheme: FlexScheme.amber);
+  return ThemeData(
+    colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+    useMaterial3: true,
+    appBarTheme: const AppBarTheme(
+      systemOverlayStyle: SystemUiOverlayStyle.dark,
+      foregroundColor: Colors.purple,
+    ),
+  ); //FlexThemeData.dark(scheme: FlexScheme.amber);
 }
 
 class Themes {

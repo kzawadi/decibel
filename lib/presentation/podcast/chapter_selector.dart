@@ -21,14 +21,12 @@ class ChapterSelector extends StatefulWidget {
     super.key,
     required this.episode,
   }) {
-    if (episode.chapters.isNotEmpty) {
-      chapters = episode.chapters.where((c) => c.toc).toList(growable: false);
-    }
+    chapters = episode.chapters.where((c) => c.toc).toList(growable: false);
   }
   final ItemScrollController itemScrollController = ItemScrollController();
   Episode episode;
-  // Chapter chapter;
-  late StreamSubscription<PositionState> positionSubscription;
+  Chapter? chapter;
+  StreamSubscription? positionSubscription;
   List<Chapter> chapters = <Chapter>[];
 
   @override
@@ -52,9 +50,9 @@ class _ChapterSelectorState extends State<ChapterSelector> {
       final episode = event.episode;
 
       if (widget.itemScrollController.isAttached) {
-        lastChapter ??= episode.currentChapter!;
+        lastChapter ??= episode!.currentChapter;
 
-        if (lastChapter != episode.currentChapter) {
+        if (lastChapter != episode!.currentChapter) {
           lastChapter = episode.currentChapter;
 
           if (!episode.chaptersLoading && episode.chapters.isNotEmpty) {
@@ -90,7 +88,7 @@ class _ChapterSelectorState extends State<ChapterSelector> {
                 child: PlatformProgressIndicator(),
               )
             : ScrollablePositionedList.builder(
-                initialScrollIndex: _initialIndex(snapshot.data!),
+                initialScrollIndex: _initialIndex(snapshot.data),
                 itemScrollController: widget.itemScrollController,
                 itemCount: snapshot.data!.chapters.length,
                 itemBuilder: (context, i) {
@@ -135,8 +133,7 @@ class _ChapterSelectorState extends State<ChapterSelector> {
                         ),
                         trailing: Text(
                           _formatStartTime(
-                            snapshot.data!.chapters[index].startTime,
-                          ),
+                              snapshot.data!.chapters[index].startTime),
                           style: textStyle,
                         ),
                       ),
@@ -150,7 +147,7 @@ class _ChapterSelectorState extends State<ChapterSelector> {
 
   @override
   void dispose() {
-    widget.positionSubscription.cancel();
+    widget.positionSubscription?.cancel();
     super.dispose();
   }
 

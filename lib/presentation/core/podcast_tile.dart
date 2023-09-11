@@ -30,7 +30,7 @@ class PodcastTile extends StatelessWidget {
           ),
         );
       },
-      minVerticalPadding: 10,
+      minVerticalPadding: 9,
       leading: Hero(
         key: Key('tilehero${podcast.imageUrl}:${podcast.link}'),
         tag: '${podcast.imageUrl}:${podcast.link}',
@@ -40,7 +40,7 @@ class PodcastTile extends StatelessWidget {
         ),
       ),
       title: Text(
-        podcast.title!,
+        podcast.title,
         maxLines: 1,
       ),
 

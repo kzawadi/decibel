@@ -145,10 +145,10 @@ class _DecibelHomeState extends State<DecibelHome> with WidgetsBindingObserver {
             selectedItemColor: Theme.of(context).iconTheme.color,
             selectedFontSize: 11,
             unselectedFontSize: 11,
-            unselectedItemColor:
-                HSLColor.fromColor(Theme.of(context).bottomAppBarTheme.color!)
-                    .withLightness(0.8)
-                    .toColor(),
+            // unselectedItemColor:
+            //     HSLColor.fromColor(Theme.of(context).bottomAppBarTheme.color!)
+            //         .withLightness(0.8)
+            //         .toColor(),
             currentIndex: index,
             onTap: pager.changePage,
             items: <BottomNavigationBarItem>[

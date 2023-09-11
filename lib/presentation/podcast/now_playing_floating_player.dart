@@ -76,38 +76,36 @@ class _FloatingPlayerBuilderState extends State<_FloatingPlayerBuilder>
     final audioBloc = Provider.of<AudioBloc>(context, listen: false);
     final placeholderBuilder = PlaceholderBuilder.of(context);
 
-    return Container(
+    return SizedBox(
       height: 64,
-      color: Theme.of(context).canvasColor,
+      // color: Theme.of(context).canvasColor,
       child: StreamBuilder<Episode?>(
         stream: audioBloc.nowPlaying,
         builder: (context, snapshot) {
           return Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
-              Container(
-                child: Padding(
-                  padding: const EdgeInsets.all(8),
-                  child: snapshot.hasData
-                      ? PodcastImage(
-                          key: Key('float${snapshot.data!.imageUrl}'),
-                          url: snapshot.data!.imageUrl!,
-                          width: 58,
-                          height: 58,
-                          borderRadius: 4,
-                          placeholder: placeholderBuilder != null
-                              ? placeholderBuilder.builder()(context)
-                              : const Image(
-                                  image: AssetImage(AssetsConstants.logo),
-                                ),
-                          errorPlaceholder: placeholderBuilder != null
-                              ? placeholderBuilder.errorBuilder()(context)
-                              : const Image(
-                                  image: AssetImage(AssetsConstants.logo),
-                                ),
-                        )
-                      : Container(),
-                ),
+              Padding(
+                padding: const EdgeInsets.all(8),
+                child: snapshot.hasData
+                    ? PodcastImage(
+                        key: Key('float${snapshot.data!.imageUrl}'),
+                        url: snapshot.data!.imageUrl!,
+                        width: 58,
+                        height: 58,
+                        borderRadius: 4,
+                        placeholder: placeholderBuilder != null
+                            ? placeholderBuilder.builder()(context)
+                            : const Image(
+                                image: AssetImage(AssetsConstants.logo),
+                              ),
+                        errorPlaceholder: placeholderBuilder != null
+                            ? placeholderBuilder.errorBuilder()(context)
+                            : const Image(
+                                image: AssetImage(AssetsConstants.logo),
+                              ),
+                      )
+                    : Container(),
               ),
               Expanded(
                 child: Column(

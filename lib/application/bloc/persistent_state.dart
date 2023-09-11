@@ -22,7 +22,7 @@ class PersistentState {
     await sink.close();
   }
 
-  static Future<Persistable?> fetchState() async {
+  static Future<Persistable> fetchState() async {
     final d = await getApplicationSupportDirectory();
 
     final file = File(join(d.path, 'state.json'));

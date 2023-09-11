@@ -11,7 +11,6 @@ import 'package:decibel/presentation/settings/settings_section_label.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_dialogs/flutter_dialogs.dart';
 import 'package:provider/provider.dart';
 
@@ -110,17 +109,14 @@ class _SettingsState extends State<Settings> {
   }
 
   Widget _buildAndroid(BuildContext context) {
-    return AnnotatedRegion<SystemUiOverlayStyle>(
-      value: Theme.of(context).appBarTheme.systemOverlayStyle!,
-      child: Scaffold(
-        appBar: AppBar(
-          elevation: 0,
-          title: const Text(
-            AppStrings.settingsLabel,
-          ),
+    return Scaffold(
+      appBar: AppBar(
+        elevation: 0,
+        title: const Text(
+          AppStrings.settingsLabel,
         ),
-        body: _buildList(context),
       ),
+      body: _buildList(context),
     );
   }
 

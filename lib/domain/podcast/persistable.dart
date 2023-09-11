@@ -4,49 +4,48 @@
 
 enum LastState { none, completed, stopped, paused }
 
-/// This class is used to persist information about the currently playing
-/// episode to disk. This allows the background audio service to persist
-/// state (whilst the UI is not visible) and for the episode play and
-/// position details to be restored when the UI becomes visible again -
-/// either when bringing it to the foreground or upon next start.
+/// This class is used to persist information about the currently playing episode to disk.
+///
+/// This allows the background audio service to persist state (whilst the UI is not visible)
+/// and for the episode play and position details to be restored when the UI becomes visible
+/// again - either when bringing it to the foreground or upon next start.
 class Persistable {
   Persistable({
-    this.pguid,
-    this.episodeId,
-    this.position,
-    this.state,
+    required this.pguid,
+    required this.episodeId,
+    required this.position,
+    required this.state,
     this.lastUpdated,
   });
 
-  Persistable.empty() {
-    pguid = '';
-    episodeId = 0;
-    position = 0;
-    state = LastState.none;
-    lastUpdated = DateTime.now();
-  }
+  Persistable.empty()
+      : pguid = '',
+        episodeId = 0,
+        position = 0,
+        state = LastState.none,
+        lastUpdated = DateTime.now();
 
   /// The Podcast GUID.
-  String? pguid;
+  String pguid;
 
   /// The episode ID (provided by the DB layer).
-  int? episodeId;
+  int episodeId;
 
   /// The current position in seconds;
-  int? position;
+  int position;
 
   /// The current playback state.
-  LastState? state;
+  LastState state;
 
   /// Date & time episode was last updated.
   DateTime? lastUpdated;
 
   Map<String, dynamic> toMap() {
     return <String, dynamic>{
-      'pguid': pguid ?? '',
-      'episodeId': episodeId ?? episodeId.toString(),
-      'position': position ?? position.toString(),
-      'state': state == null ? LastState.none.toString() : state.toString(),
+      'pguid': pguid,
+      'episodeId': episodeId,
+      'position': position,
+      'state': state.toString(),
       'lastUpdated': lastUpdated == null
           ? DateTime.now().millisecondsSinceEpoch
           : lastUpdated!.millisecondsSinceEpoch,
