@@ -1,6 +1,6 @@
-import 'package:decibel/app.dart';
-import 'package:decibel/bootstrap.dart';
+// import 'package:decibel/app.dart';
+// import 'package:decibel/bootstrap.dart';
 
-void main() {
-  bootstrap(() => const DecibelApp());
-}
+// void main() {
+//   bootstrap(() => const DecibelApp());
+// }

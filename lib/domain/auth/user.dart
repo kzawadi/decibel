@@ -18,6 +18,8 @@ class User with _$User {
     String? bannerImage,
     String? contact,
     String? bio,
+    String? role,
+    String? group,
     String? location,
     String? dob,
     String? createdAt,
@@ -28,6 +30,7 @@ class User with _$User {
     List<String>? followersList,
     List<String>? followingList,
     List<String>? userInterests,
+    List<String>? purchasedEpisodeIds,
   }) = _User;
 
   factory User.fromJson(Map<String, dynamic> json) => _$UserFromJson(json);

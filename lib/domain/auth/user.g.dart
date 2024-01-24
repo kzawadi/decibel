@@ -19,6 +19,8 @@ _$_User _$$_UserFromJson(Map<String, dynamic> json) => _$_User(
       bannerImage: json['bannerImage'] as String?,
       contact: json['contact'] as String?,
       bio: json['bio'] as String?,
+      role: json['role'] as String?,
+      group: json['group'] as String?,
       location: json['location'] as String?,
       dob: json['dob'] as String?,
       createdAt: json['createdAt'] as String?,
@@ -33,6 +35,9 @@ _$_User _$$_UserFromJson(Map<String, dynamic> json) => _$_User(
           ?.map((e) => e as String)
           .toList(),
       userInterests: (json['userInterests'] as List<dynamic>?)
+          ?.map((e) => e as String)
+          .toList(),
+      purchasedEpisodeIds: (json['purchasedEpisodeIds'] as List<dynamic>?)
           ?.map((e) => e as String)
           .toList(),
     );
@@ -50,6 +55,8 @@ Map<String, dynamic> _$$_UserToJson(_$_User instance) => <String, dynamic>{
       'bannerImage': instance.bannerImage,
       'contact': instance.contact,
       'bio': instance.bio,
+      'role': instance.role,
+      'group': instance.group,
       'location': instance.location,
       'dob': instance.dob,
       'createdAt': instance.createdAt,
@@ -60,4 +67,5 @@ Map<String, dynamic> _$$_UserToJson(_$_User instance) => <String, dynamic>{
       'followersList': instance.followersList,
       'followingList': instance.followingList,
       'userInterests': instance.userInterests,
+      'purchasedEpisodeIds': instance.purchasedEpisodeIds,
     };

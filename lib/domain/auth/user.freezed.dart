@@ -32,6 +32,8 @@ mixin _$User {
   String? get bannerImage => throw _privateConstructorUsedError;
   String? get contact => throw _privateConstructorUsedError;
   String? get bio => throw _privateConstructorUsedError;
+  String? get role => throw _privateConstructorUsedError;
+  String? get group => throw _privateConstructorUsedError;
   String? get location => throw _privateConstructorUsedError;
   String? get dob => throw _privateConstructorUsedError;
   String? get createdAt => throw _privateConstructorUsedError;
@@ -42,6 +44,7 @@ mixin _$User {
   List<String>? get followersList => throw _privateConstructorUsedError;
   List<String>? get followingList => throw _privateConstructorUsedError;
   List<String>? get userInterests => throw _privateConstructorUsedError;
+  List<String>? get purchasedEpisodeIds => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -66,6 +69,8 @@ abstract class $UserCopyWith<$Res> {
       String? bannerImage,
       String? contact,
       String? bio,
+      String? role,
+      String? group,
       String? location,
       String? dob,
       String? createdAt,
@@ -75,7 +80,8 @@ abstract class $UserCopyWith<$Res> {
       String? fcmToken,
       List<String>? followersList,
       List<String>? followingList,
-      List<String>? userInterests});
+      List<String>? userInterests,
+      List<String>? purchasedEpisodeIds});
 }
 
 /// @nodoc
@@ -103,6 +109,8 @@ class _$UserCopyWithImpl<$Res, $Val extends User>
     Object? bannerImage = freezed,
     Object? contact = freezed,
     Object? bio = freezed,
+    Object? role = freezed,
+    Object? group = freezed,
     Object? location = freezed,
     Object? dob = freezed,
     Object? createdAt = freezed,
@@ -113,6 +121,7 @@ class _$UserCopyWithImpl<$Res, $Val extends User>
     Object? followersList = freezed,
     Object? followingList = freezed,
     Object? userInterests = freezed,
+    Object? purchasedEpisodeIds = freezed,
   }) {
     return _then(_value.copyWith(
       id: freezed == id
@@ -163,6 +172,14 @@ class _$UserCopyWithImpl<$Res, $Val extends User>
           ? _value.bio
           : bio // ignore: cast_nullable_to_non_nullable
               as String?,
+      role: freezed == role
+          ? _value.role
+          : role // ignore: cast_nullable_to_non_nullable
+              as String?,
+      group: freezed == group
+          ? _value.group
+          : group // ignore: cast_nullable_to_non_nullable
+              as String?,
       location: freezed == location
           ? _value.location
           : location // ignore: cast_nullable_to_non_nullable
@@ -203,6 +220,10 @@ class _$UserCopyWithImpl<$Res, $Val extends User>
           ? _value.userInterests
           : userInterests // ignore: cast_nullable_to_non_nullable
               as List<String>?,
+      purchasedEpisodeIds: freezed == purchasedEpisodeIds
+          ? _value.purchasedEpisodeIds
+          : purchasedEpisodeIds // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
     ) as $Val);
   }
 }
@@ -226,6 +247,8 @@ abstract class _$$_UserCopyWith<$Res> implements $UserCopyWith<$Res> {
       String? bannerImage,
       String? contact,
       String? bio,
+      String? role,
+      String? group,
       String? location,
       String? dob,
       String? createdAt,
@@ -235,7 +258,8 @@ abstract class _$$_UserCopyWith<$Res> implements $UserCopyWith<$Res> {
       String? fcmToken,
       List<String>? followersList,
       List<String>? followingList,
-      List<String>? userInterests});
+      List<String>? userInterests,
+      List<String>? purchasedEpisodeIds});
 }
 
 /// @nodoc
@@ -259,6 +283,8 @@ class __$$_UserCopyWithImpl<$Res> extends _$UserCopyWithImpl<$Res, _$_User>
     Object? bannerImage = freezed,
     Object? contact = freezed,
     Object? bio = freezed,
+    Object? role = freezed,
+    Object? group = freezed,
     Object? location = freezed,
     Object? dob = freezed,
     Object? createdAt = freezed,
@@ -269,6 +295,7 @@ class __$$_UserCopyWithImpl<$Res> extends _$UserCopyWithImpl<$Res, _$_User>
     Object? followersList = freezed,
     Object? followingList = freezed,
     Object? userInterests = freezed,
+    Object? purchasedEpisodeIds = freezed,
   }) {
     return _then(_$_User(
       id: freezed == id
@@ -319,6 +346,14 @@ class __$$_UserCopyWithImpl<$Res> extends _$UserCopyWithImpl<$Res, _$_User>
           ? _value.bio
           : bio // ignore: cast_nullable_to_non_nullable
               as String?,
+      role: freezed == role
+          ? _value.role
+          : role // ignore: cast_nullable_to_non_nullable
+              as String?,
+      group: freezed == group
+          ? _value.group
+          : group // ignore: cast_nullable_to_non_nullable
+              as String?,
       location: freezed == location
           ? _value.location
           : location // ignore: cast_nullable_to_non_nullable
@@ -359,6 +394,10 @@ class __$$_UserCopyWithImpl<$Res> extends _$UserCopyWithImpl<$Res, _$_User>
           ? _value._userInterests
           : userInterests // ignore: cast_nullable_to_non_nullable
               as List<String>?,
+      purchasedEpisodeIds: freezed == purchasedEpisodeIds
+          ? _value._purchasedEpisodeIds
+          : purchasedEpisodeIds // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
     ));
   }
 }
@@ -379,6 +418,8 @@ class _$_User implements _User {
       this.bannerImage,
       this.contact,
       this.bio,
+      this.role,
+      this.group,
       this.location,
       this.dob,
       this.createdAt,
@@ -388,10 +429,12 @@ class _$_User implements _User {
       this.fcmToken,
       final List<String>? followersList,
       final List<String>? followingList,
-      final List<String>? userInterests})
+      final List<String>? userInterests,
+      final List<String>? purchasedEpisodeIds})
       : _followersList = followersList,
         _followingList = followingList,
-        _userInterests = userInterests;
+        _userInterests = userInterests,
+        _purchasedEpisodeIds = purchasedEpisodeIds;
 
   factory _$_User.fromJson(Map<String, dynamic> json) => _$$_UserFromJson(json);
 
@@ -419,6 +462,10 @@ class _$_User implements _User {
   final String? contact;
   @override
   final String? bio;
+  @override
+  final String? role;
+  @override
+  final String? group;
   @override
   final String? location;
   @override
@@ -463,9 +510,20 @@ class _$_User implements _User {
     return EqualUnmodifiableListView(value);
   }
 
+  final List<String>? _purchasedEpisodeIds;
+  @override
+  List<String>? get purchasedEpisodeIds {
+    final value = _purchasedEpisodeIds;
+    if (value == null) return null;
+    if (_purchasedEpisodeIds is EqualUnmodifiableListView)
+      return _purchasedEpisodeIds;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
   @override
   String toString() {
-    return 'User(id: $id, key: $key, email: $email, userId: $userId, displayName: $displayName, userName: $userName, zodiacSign: $zodiacSign, webSite: $webSite, profilePic: $profilePic, bannerImage: $bannerImage, contact: $contact, bio: $bio, location: $location, dob: $dob, createdAt: $createdAt, isVerified: $isVerified, followers: $followers, following: $following, fcmToken: $fcmToken, followersList: $followersList, followingList: $followingList, userInterests: $userInterests)';
+    return 'User(id: $id, key: $key, email: $email, userId: $userId, displayName: $displayName, userName: $userName, zodiacSign: $zodiacSign, webSite: $webSite, profilePic: $profilePic, bannerImage: $bannerImage, contact: $contact, bio: $bio, role: $role, group: $group, location: $location, dob: $dob, createdAt: $createdAt, isVerified: $isVerified, followers: $followers, following: $following, fcmToken: $fcmToken, followersList: $followersList, followingList: $followingList, userInterests: $userInterests, purchasedEpisodeIds: $purchasedEpisodeIds)';
   }
 
   @override
@@ -490,6 +548,8 @@ class _$_User implements _User {
                 other.bannerImage == bannerImage) &&
             (identical(other.contact, contact) || other.contact == contact) &&
             (identical(other.bio, bio) || other.bio == bio) &&
+            (identical(other.role, role) || other.role == role) &&
+            (identical(other.group, group) || other.group == group) &&
             (identical(other.location, location) ||
                 other.location == location) &&
             (identical(other.dob, dob) || other.dob == dob) &&
@@ -508,7 +568,9 @@ class _$_User implements _User {
             const DeepCollectionEquality()
                 .equals(other._followingList, _followingList) &&
             const DeepCollectionEquality()
-                .equals(other._userInterests, _userInterests));
+                .equals(other._userInterests, _userInterests) &&
+            const DeepCollectionEquality()
+                .equals(other._purchasedEpisodeIds, _purchasedEpisodeIds));
   }
 
   @JsonKey(ignore: true)
@@ -527,6 +589,8 @@ class _$_User implements _User {
         bannerImage,
         contact,
         bio,
+        role,
+        group,
         location,
         dob,
         createdAt,
@@ -536,7 +600,8 @@ class _$_User implements _User {
         fcmToken,
         const DeepCollectionEquality().hash(_followersList),
         const DeepCollectionEquality().hash(_followingList),
-        const DeepCollectionEquality().hash(_userInterests)
+        const DeepCollectionEquality().hash(_userInterests),
+        const DeepCollectionEquality().hash(_purchasedEpisodeIds)
       ]);
 
   @JsonKey(ignore: true)
@@ -567,6 +632,8 @@ abstract class _User implements User {
       final String? bannerImage,
       final String? contact,
       final String? bio,
+      final String? role,
+      final String? group,
       final String? location,
       final String? dob,
       final String? createdAt,
@@ -576,7 +643,8 @@ abstract class _User implements User {
       final String? fcmToken,
       final List<String>? followersList,
       final List<String>? followingList,
-      final List<String>? userInterests}) = _$_User;
+      final List<String>? userInterests,
+      final List<String>? purchasedEpisodeIds}) = _$_User;
 
   factory _User.fromJson(Map<String, dynamic> json) = _$_User.fromJson;
 
@@ -605,6 +673,10 @@ abstract class _User implements User {
   @override
   String? get bio;
   @override
+  String? get role;
+  @override
+  String? get group;
+  @override
   String? get location;
   @override
   String? get dob;
@@ -624,6 +696,8 @@ abstract class _User implements User {
   List<String>? get followingList;
   @override
   List<String>? get userInterests;
+  @override
+  List<String>? get purchasedEpisodeIds;
   @override
   @JsonKey(ignore: true)
   _$$_UserCopyWith<_$_User> get copyWith => throw _privateConstructorUsedError;

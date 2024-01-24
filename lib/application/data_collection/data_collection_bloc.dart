@@ -3,7 +3,6 @@ import 'dart:async';
 import 'package:bloc/bloc.dart';
 import 'package:decibel/domain/auth/user.dart';
 import 'package:decibel/domain/data/data_failure.dart';
-import 'package:decibel/domain/data/use_cases/select_interests_use_case.dart';
 import 'package:decibel/domain/data/use_cases/submit_user_data_use_case.dart';
 import 'package:decibel/presentation/core/app_strings.dart';
 import 'package:fpdart/fpdart.dart';
@@ -52,14 +51,12 @@ class DataCollectionBloc
     extends Bloc<DataCollectionEvent, DataCollectionState> {
   DataCollectionBloc(
     this._submitUserDataUsecase,
-    this._selectInterestsUseCase,
   ) : super(DataCollectionState.initial()) {
     // Register event handlers
     on<DataCollectionEvent>(_dataCollectionEventHandler);
   }
 
   final SubmitUserDataUsecase _submitUserDataUsecase;
-  final SelectInterestsUseCase _selectInterestsUseCase;
 
   /// Event handler for data collection events.
   ///
@@ -112,7 +109,6 @@ class DataCollectionBloc
       selectInterest: (value) async {
         // Handle the "selectInterest" event
         emit(state.copyWith(interest: value.interest));
-        await _handleInterest(_selectInterestsUseCase.call, emit);
       },
     );
   }
