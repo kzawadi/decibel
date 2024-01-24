@@ -59,8 +59,8 @@ class DefaultAudioPlayerService extends AudioPlayerService {
   final PodcastService? podcastService;
 
   late AudioHandler _audioHandler;
-  var _initialised = false;
-  var _cold = false;
+  bool _initialised = false;
+  bool _cold = false;
   var _playbackSpeed = 1.0;
   var _trimSilence = false;
   var _volumeBoost = false;
@@ -174,7 +174,7 @@ class DefaultAudioPlayerService extends AudioPlayerService {
       _updateEpisodeState();
 
       /// And the position of our current episode.
-      _broadcastEpisodePosition(_currentEpisode!);
+      _broadcastEpisodePosition(_currentEpisode);
 
       try {
         // Load ancillary items
@@ -817,7 +817,8 @@ class _DefaultAudioPlayerHandler extends BaseAudioHandler with SeekHandler {
     // var trim = mediaItem.extras['trim'] as bool ?? true;
 
     log.fine(
-        'loading new track ${mediaItem.id} - from position ${start.inSeconds} (${start.inMilliseconds})');
+      'loading new track ${mediaItem.id} - from position ${start.inSeconds} (${start.inMilliseconds})',
+    );
 
     final source = downloaded
         ? AudioSource.uri(
@@ -854,7 +855,7 @@ class _DefaultAudioPlayerHandler extends BaseAudioHandler with SeekHandler {
 
           await _player.play();
         } catch (e) {
-          log.fine('State error ${e}');
+          log.fine('State error $e');
         }
       }
     } on PlayerException catch (e) {
@@ -930,8 +931,10 @@ class _DefaultAudioPlayerHandler extends BaseAudioHandler with SeekHandler {
   }
 
   @override
-  Future<dynamic> customAction(String name,
-      [Map<String, dynamic>? extras]) async {
+  Future<dynamic> customAction(
+    String name, [
+    Map<String, dynamic>? extras,
+  ]) async {
     switch (name) {
       case 'trim':
         final t = extras!['value'] as bool;

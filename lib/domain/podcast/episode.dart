@@ -17,8 +17,8 @@ import 'package:logging/logging.dart';
 class Episode {
   Episode({
     required this.guid,
-    this.pguid,
     required this.podcast,
+    this.pguid,
     this.id,
     this.downloadTaskId,
     this.filepath,
@@ -45,6 +45,7 @@ class Episode {
     this.persons = const <Person>[],
     this.transcriptId = 0,
     this.lastUpdated,
+    this.isPremium = true,
   })  : imageUrl = imageUrl?.forceHttps,
         thumbImageUrl = thumbImageUrl?.forceHttps,
         contentUrl = contentUrl?.forceHttps,
@@ -53,6 +54,7 @@ class Episode {
 
   /// Database ID
   int? id;
+  final bool isPremium;
 
   /// A String GUID for the episode.
   final String guid;
@@ -234,7 +236,8 @@ class Episode {
               episode['publicationDate'] == 'null'
           ? DateTime.now()
           : DateTime.fromMillisecondsSinceEpoch(
-              int.parse(episode['publicationDate'] as String)),
+              int.parse(episode['publicationDate'] as String),
+            ),
       contentUrl: episode['contentUrl'] as String?,
       author: episode['author'] as String?,
       season: int.parse(episode['season'] as String? ?? '0'),
@@ -252,7 +255,8 @@ class Episode {
           episode['lastUpdated'] == null || episode['lastUpdated'] == 'null'
               ? DateTime.now()
               : DateTime.fromMillisecondsSinceEpoch(
-                  int.parse(episode['lastUpdated'] as String)),
+                  int.parse(episode['lastUpdated'] as String),
+                ),
     );
   }
 

@@ -37,6 +37,9 @@ _$_User _$$_UserFromJson(Map<String, dynamic> json) => _$_User(
       userInterests: (json['userInterests'] as List<dynamic>?)
           ?.map((e) => e as String)
           .toList(),
+      purchasedEpisodeIds: (json['purchasedEpisodeIds'] as List<dynamic>?)
+          ?.map((e) => e as String)
+          .toList(),
     );
 
 Map<String, dynamic> _$$_UserToJson(_$_User instance) => <String, dynamic>{
@@ -64,4 +67,5 @@ Map<String, dynamic> _$$_UserToJson(_$_User instance) => <String, dynamic>{
       'followersList': instance.followersList,
       'followingList': instance.followingList,
       'userInterests': instance.userInterests,
+      'purchasedEpisodeIds': instance.purchasedEpisodeIds,
     };

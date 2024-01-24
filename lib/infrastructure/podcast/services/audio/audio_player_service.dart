@@ -26,8 +26,8 @@ class PositionState {
   });
 
   PositionState.emptyState()
-      : position = const Duration(seconds: 0),
-        length = const Duration(seconds: 0),
+      : position = const Duration(),
+        length = const Duration(),
         percentage = 0,
         buffering = false;
   Duration position;
@@ -37,7 +37,7 @@ class PositionState {
   final bool buffering;
 }
 
-/// This class defines the audio playback options supported by Anytime. The implementing
+/// This class defines the audio playback options supported. The implementing
 /// classes will then handle the specifics for the platform we are running on.
 abstract class AudioPlayerService {
   /// Play a new episode, optionally resume at last save point.
